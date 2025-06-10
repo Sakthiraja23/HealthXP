@@ -34,10 +34,10 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
         fill="hsl(0, 0%, 20%)" // Dark gray
       />
 
-      {/* Filled portion (accent color) */}
+      {/* Filled portion (red color) */}
       <path
         d="M25,8 C20.5,8 17,11.5 17,16 C17,20.5 20.5,24 25,24 C29.5,24 33,20.5 33,16 C33,11.5 29.5,8 25,8 Z M13,30 C12,30 12,32 14,38 L16,60 L12,60 L12,92 L22,92 L22,70 L28,70 L28,92 L38,92 L38,60 L34,60 L36,38 C38,32 38,30 37,30 L13,30 Z"
-        fill="hsl(var(--accent))"
+        fill="hsl(0, 70%, 50%)" // Red color
         clipPath="url(#humanBodyFillClip)"
       />
 
@@ -48,7 +48,7 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
         textAnchor="middle"
         dominantBaseline="central"
         fontSize="12" // Adjusted for visibility within the shape
-        fill="hsl(var(--accent-foreground))" // Text color for contrast with accent fill
+        fill="hsl(0, 0%, 100%)" // White text for contrast with red
         className="font-headline font-bold"
       >
         {Math.round(displayPercentage)}%
