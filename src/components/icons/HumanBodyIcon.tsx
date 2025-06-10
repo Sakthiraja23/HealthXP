@@ -15,8 +15,8 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
   // Ensure percentage is within 0-100
   const displayPercentage = Math.max(0, Math.min(100, percentage));
 
-  // Updated path for a simpler human silhouette
-  const newPathData = "M25,4 C20.5817,4 17,7.58172 17,12 C17,16.4183 20.5817,20 25,20 C29.4183,20 33,16.4183 33,12 C33,7.58172 29.4183,4 25,4 Z M15,25 C15,22 17,22 20,22 L30,22 C33,22 35,22 35,25 L35,55 L20,96 L30,96 L20,55 L15,55 Z M15 55 L15 96 L20 96 L20 55Z M30 55 L30 96 L35 96 L35 55Z";
+  // A more standard, simpler human silhouette path
+  const newPathData = "M25 5 C20.8333 5 17.5 8.33333 17.5 12.5 C17.5 16.6667 20.8333 20 25 20 C29.1667 20 32.5 16.6667 32.5 12.5 C32.5 8.33333 29.1667 5 25 5 Z M12.5 22.5 L12.5 55 L20 95 L30 95 L37.5 55 L37.5 22.5 C37.5 21.1193 36.3807 20 35 20 L15 20 C13.6193 20 12.5 21.1193 12.5 22.5 Z";
 
 
   return (
@@ -38,24 +38,24 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       <path
         d={newPathData}
-        fill="hsl(0, 0%, 20%)" 
+        fill="hsl(0, 0%, 20%)"
       />
 
       <g clipPath="url(#humanBodyFillClip)">
         <path
             d={newPathData}
-            fill="hsl(0, 70%, 50%)" 
+            fill="hsl(0, 70%, 50%)" // Red fill
             clipPath="url(#humanBodyFillRectClip)"
         />
       </g>
-      
+
       <text
         x="25"
-        y="40" 
+        y="40"
         textAnchor="middle"
         dominantBaseline="central"
         fontSize="10"
-        fill="hsl(0, 0%, 100%)" 
+        fill="hsl(0, 0%, 100%)" // White text
         className="font-headline font-bold"
       >
         {Math.round(displayPercentage)}%
@@ -65,4 +65,3 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 };
 
 export default HumanBodyIcon;
-
