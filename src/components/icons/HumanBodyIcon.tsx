@@ -14,10 +14,17 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
   const displayPercentage = Math.max(0, Math.min(100, percentage));
 
-  // Head path: Increased radius from 5 to 6, center (25,15). Bottom of head is y=21.
-  const headPathData = "M25 9 C21.7 9 19 11.7 19 15 C19 18.3 21.7 21 25 21 C28.3 21 31 18.3 31 15 C31 11.7 28.3 9 25 9 Z";
-  // Body and limbs path with horizontal arms, wider torso, and straight rectangular legs. Body starts at y=20.
-  const bodyLimbsPathData = "M15 20 L0 20 L0 23 L3 23 L3 25 L15 25 L15 50 L15 95 L20 95 L20 60 L30 60 L30 95 L35 95 L35 50 L35 25 L47 25 L47 23 L50 23 L50 20 L35 20 Z";
+  // Head path: Increased radius, center (25,16). Bottom of head is y=23.
+  const headPathData = "M25 9 C21.17 9 18 12.17 18 16 C18 19.83 21.17 23 25 23 C28.83 23 32 19.83 32 16 C32 12.17 28.83 9 25 9 Z";
+  
+  // Arms as simple horizontal rectangles, aligned with head base (y=23)
+  const leftArmPath = "M0 23 L15 23 L15 26 L0 26 Z"; // Left arm: y from 23 to 26
+  const rightArmPath = "M35 23 L50 23 L50 26 L35 26 Z"; // Right arm: y from 23 to 26
+
+  // Torso and straight rectangular legs. Torso top also at y=23.
+  const torsoLegsPath = "M15 23 L15 50 L15 95 L20 95 L20 60 L30 60 L30 95 L35 95 L35 50 L35 23 Z";
+  
+  const bodyLimbsPathData = `${leftArmPath} ${torsoLegsPath} ${rightArmPath}`;
   const newPathData = `${headPathData} ${bodyLimbsPathData}`;
 
   return (
@@ -66,4 +73,3 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 };
 
 export default HumanBodyIcon;
-
