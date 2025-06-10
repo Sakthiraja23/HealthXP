@@ -39,13 +39,13 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       <path
         d={newPathData}
-        fill="hsl(0, 0%, 20%)"
+        fill="hsl(0, 0%, 20%)" // Dark grey base for the icon
       />
 
       <g clipPath="url(#humanBodyFillClip)">
         <path
             d={newPathData}
-            fill="hsl(0, 70%, 50%)"
+            fill="hsl(0, 70%, 50%)" // Red fill color
             clipPath="url(#humanBodyFillRectClip)"
         />
       </g>
@@ -55,8 +55,8 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
         y="50"
         textAnchor="middle"
         dominantBaseline="central"
-        fontSize="10"
-        fill="hsl(0, 0%, 100%)"
+        fontSize="8" // Reduced font size for better visibility of "100%"
+        fill="hsl(0, 0%, 100%)" // White text for contrast
         className="font-headline font-bold"
       >
         {Math.round(displayPercentage)}%
