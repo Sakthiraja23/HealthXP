@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
@@ -61,7 +62,7 @@ export default function Home() {
     // Or ensure initialTasks is truly static and not derived from client-only sources
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-8">
-        <h1 className="text-4xl font-headline font-bold text-foreground text-center my-8">
+        <h1 className="text-4xl font-headline font-bold text-destructive text-center my-8">
           HealthXP: Habit Engine
         </h1>
         <p className="text-foreground">Loading tasks...</p>
@@ -72,7 +73,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen bg-background p-4 sm:p-8 font-body">
       <header className="w-full mb-10">
-        <h1 className="text-3xl sm:text-4xl font-headline font-bold text-foreground text-center">
+        <h1 className="text-3xl sm:text-4xl font-headline font-bold text-destructive text-center">
           HealthXP: Habit Engine
         </h1>
       </header>
