@@ -15,8 +15,8 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
   // Ensure percentage is within 0-100
   const displayPercentage = Math.max(0, Math.min(100, percentage));
 
-  // A more standard, simpler human silhouette path
-  const newPathData = "M25 5 C20.8333 5 17.5 8.33333 17.5 12.5 C17.5 16.6667 20.8333 20 25 20 C29.1667 20 32.5 16.6667 32.5 12.5 C32.5 8.33333 29.1667 5 25 5 Z M12.5 22.5 L12.5 55 L20 95 L30 95 L37.5 55 L37.5 22.5 C37.5 21.1193 36.3807 20 35 20 L15 20 C13.6193 20 12.5 21.1193 12.5 22.5 Z";
+  // Path for a human silhouette with arms and legs
+  const newPathData = "M25 5 C22.25 5 20 7.25 20 10 C20 12.75 22.25 15 25 15 C27.75 15 30 12.75 30 10 C30 7.25 27.75 5 25 5 Z M15 18 L15 45 L10 45 L10 70 L15 70 L15 95 L22 95 L22 65 L28 65 L28 95 L35 95 L35 70 L40 70 L40 45 L35 45 L35 18 Z";
 
 
   return (
@@ -38,7 +38,7 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       <path
         d={newPathData}
-        fill="hsl(0, 0%, 20%)"
+        fill="hsl(0, 0%, 20%)" // Dark grey background for the silhouette shape
       />
 
       <g clipPath="url(#humanBodyFillClip)">
@@ -51,7 +51,7 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       <text
         x="25"
-        y="40"
+        y="50" // Adjusted y for better centering with arms/legs
         textAnchor="middle"
         dominantBaseline="central"
         fontSize="10"
