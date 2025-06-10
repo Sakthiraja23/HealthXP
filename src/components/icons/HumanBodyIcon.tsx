@@ -14,6 +14,9 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
   // Ensure percentage is within 0-100
   const displayPercentage = Math.max(0, Math.min(100, percentage));
 
+  // New path for a more generic human silhouette
+  const newPathData = "M25,4 C20.5,4 17,7.5 17,12 C17,16.5 20.5,20 25,20 C29.5,20 33,16.5 33,12 C33,7.5 29.5,4 25,4z M8,28 C8,25 10,23 13,23 L37,23 C40,23 42,25 42,28 L42,55 L39,65 L39,96 L30,96 L30,70 L20,70 L20,96 L11,96 L11,65 L8,55 L8,28z";
+
   return (
     <svg
       viewBox="0 0 50 100"
@@ -30,13 +33,13 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       {/* Base body shape (dark gray) */}
       <path
-        d="M25,8 C20.5,8 17,11.5 17,16 C17,20.5 20.5,24 25,24 C29.5,24 33,20.5 33,16 C33,11.5 29.5,8 25,8 Z M13,30 C12,30 12,32 14,38 L16,60 L12,60 L12,92 L22,92 L22,70 L28,70 L28,92 L38,92 L38,60 L34,60 L36,38 C38,32 38,30 37,30 L13,30 Z"
+        d={newPathData}
         fill="hsl(0, 0%, 20%)" // Dark gray
       />
 
       {/* Filled portion (red color) */}
       <path
-        d="M25,8 C20.5,8 17,11.5 17,16 C17,20.5 20.5,24 25,24 C29.5,24 33,20.5 33,16 C33,11.5 29.5,8 25,8 Z M13,30 C12,30 12,32 14,38 L16,60 L12,60 L12,92 L22,92 L22,70 L28,70 L28,92 L38,92 L38,60 L34,60 L36,38 C38,32 38,30 37,30 L13,30 Z"
+        d={newPathData}
         fill="hsl(0, 70%, 50%)" // Red color
         clipPath="url(#humanBodyFillClip)"
       />
