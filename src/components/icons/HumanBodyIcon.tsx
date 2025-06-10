@@ -16,8 +16,8 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
   // Head path adjusted to lower its position and connect with the body
   const headPathData = "M25 10 C22.25 10 20 12.25 20 15 C20 17.75 22.25 20 25 20 C27.75 20 30 17.75 30 15 C30 12.25 27.75 10 25 10 Z";
-  // Body and limbs path with horizontal arms
-  const bodyLimbsPathData = "M18 20 L5 20 L5 23 L8 23 L8 25 L18 25 L18 50 L15 95 L22 95 L22 60 L28 60 L28 95 L35 95 L32 50 L32 25 L42 25 L42 23 L45 23 L45 20 L32 20 Z";
+  // Body and limbs path with horizontal arms, wider torso
+  const bodyLimbsPathData = "M15 20 L0 20 L0 23 L3 23 L3 25 L15 25 L15 50 L10 95 L20 95 L20 60 L30 60 L30 95 L40 95 L35 50 L35 25 L47 25 L47 23 L50 23 L50 20 L35 20 Z";
   const newPathData = `${headPathData} ${bodyLimbsPathData}`;
 
   return (
@@ -39,13 +39,13 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       <path
         d={newPathData}
-        fill="hsl(0, 0%, 20%)" 
+        fill="hsl(0, 0%, 20%)"
       />
 
       <g clipPath="url(#humanBodyFillClip)">
         <path
             d={newPathData}
-            fill="hsl(0, 70%, 50%)" 
+            fill="hsl(0, 70%, 50%)"
             clipPath="url(#humanBodyFillRectClip)"
         />
       </g>
@@ -56,7 +56,7 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
         textAnchor="middle"
         dominantBaseline="central"
         fontSize="10"
-        fill="hsl(0, 0%, 100%)" 
+        fill="hsl(0, 0%, 100%)"
         className="font-headline font-bold"
       >
         {Math.round(displayPercentage)}%
