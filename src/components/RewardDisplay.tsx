@@ -11,7 +11,7 @@ const RewardDisplay: React.FC<RewardDisplayProps> = ({ percentage }) => {
   return (
     <Card className="shadow-lg w-full">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl text-center text-primary">Daily Progress</CardTitle>
+        <CardTitle className="font-headline text-2xl text-center text-[hsl(var(--custom-green))]">Progress XP</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col items-center justify-center p-6">
         <div className="w-48 h-96 md:w-56 md:h-[448px] mb-4"> {/* Container for SVG to control size */}

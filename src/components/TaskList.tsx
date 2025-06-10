@@ -15,7 +15,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onTaskToggle }) => {
   return (
     <Card className="shadow-lg">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl text-center text-primary">Daily Habits</CardTitle>
+        <CardTitle className="font-headline text-2xl text-center text-[hsl(var(--custom-green))]">Daily Tasks</CardTitle>
       </CardHeader>
       <CardContent>
         <ul className="space-y-4">
