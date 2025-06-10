@@ -15,9 +15,10 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
   // Ensure percentage is within 0-100
   const displayPercentage = Math.max(0, Math.min(100, percentage));
 
-  // Path for a human silhouette with arms and legs
-  const newPathData = "M25 5 C22.25 5 20 7.25 20 10 C20 12.75 22.25 15 25 15 C27.75 15 30 12.75 30 10 C30 7.25 27.75 5 25 5 Z M15 18 L15 45 L10 45 L10 70 L15 70 L15 95 L22 95 L22 65 L28 65 L28 95 L35 95 L35 70 L40 70 L40 45 L35 45 L35 18 Z";
-
+  // Path for a human silhouette with head, torso, horizontal arms, and legs
+  const headPathData = "M25 5 C22.25 5 20 7.25 20 10 C20 12.75 22.25 15 25 15 C27.75 15 30 12.75 30 10 C30 7.25 27.75 5 25 5 Z";
+  const bodyLimbsPathData = "M18 20 L5 20 L5 23 L8 23 L8 25 L18 25 L18 50 L15 95 L22 95 L22 60 L28 60 L28 95 L35 95 L32 50 L32 25 L42 25 L42 23 L45 23 L45 20 L32 20 Z";
+  const newPathData = `${headPathData} ${bodyLimbsPathData}`;
 
   return (
     <svg
@@ -51,7 +52,7 @@ const HumanBodyIcon = ({ percentage, ...props }: HumanBodyIconProps) => {
 
       <text
         x="25"
-        y="50" // Adjusted y for better centering with arms/legs
+        y="50"
         textAnchor="middle"
         dominantBaseline="central"
         fontSize="10"
